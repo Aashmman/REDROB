@@ -8,7 +8,7 @@ from utils.tf_idf import calculate_tfidf
 from utils.cosine_similarity import calculate_cosine_similarity
 
 
-# Load resume data
+# Load resumes
 with open('data/resumes.json', 'r') as f:
     resumes = json.load(f)
 
@@ -38,7 +38,7 @@ for resume in resumes:
     normalized_resumes.append(resume)
 
 
-# Deduplicate resume skills
+# Deduplicate skills
 deduplicated_resumes = []
 
 for resume in normalized_resumes:
@@ -52,6 +52,21 @@ for resume in normalized_resumes:
     deduplicated_resumes.append(resume)
 
 
+# Normalize job description skills
+normalized_job_descriptions = []
+
+for jd in job_descriptions:
+
+    normalized_required_skills = normalize_skills(
+        jd['required_skills'],
+        skill_aliases
+    )
+
+    jd['required_skills'] = normalized_required_skills
+
+    normalized_job_descriptions.append(jd)
+
+
 # Calculate TF-IDF vectors
 tfidf_vectors = calculate_tfidf(
     deduplicated_resumes
@@ -61,26 +76,25 @@ tfidf_vectors = calculate_tfidf(
 # Calculate cosine similarities
 cosine_similarities = calculate_cosine_similarity(
     tfidf_vectors,
-    job_descriptions
+    normalized_job_descriptions,
+    skill_aliases
 )
 
 
-# Create output folder if missing
+# Create output folder
 os.makedirs("output", exist_ok=True)
 
 
 # Write results
 with open("output/results.txt", "w") as f:
 
-    for job_description in job_descriptions:
+    for job_description in normalized_job_descriptions:
 
-        f.write(
-            f"{job_description['title']}\n"
-        )
+        title = job_description['title']
 
-        results = cosine_similarities[
-            job_description['title']
-        ]
+        f.write(f"{title}\n")
+
+        results = cosine_similarities[title]
 
         # Sort by score descending, then name ascending
         results = sorted(
