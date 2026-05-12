@@ -1,0 +1,9 @@
+ML Engineer
+Sneha Patel(0.29), Karan Mehta(0.26), Arjun Sharma(0.24)
+
+Backend Engineer
+Rahul Gupta(0.82), Ananya Krishnan(0.17), Deepika Rao(0.12)
+
+Frontend Engineer
+Ananya Krishnan(0.36), Priya Nair(0.35), Aditya Kumar(0.35)
+

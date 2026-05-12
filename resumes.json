@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Arjun Sharma",
+    "skills": ["Pyhton", "MachineLearning", "SQL", "pandas", "numpy", "Deep-learning"]
+  },
+  {
+    "name": "Priya Nair",
+    "skills": ["JavaScrpit", "React", "Node.JS", "MongoDb", "REST api", "HTML/CSS"]
+  },
+  {
+    "name": "Rahul Gupta",
+    "skills": ["Java", "Spring Boot", "MySql", "Microservices", "Docker", "kubernates"]
+  },
+  {
+    "name": "Sneha Patel",
+    "skills": ["Python", "TensorFlow", "Keras", "NLP", "BERT", "data-viz", "matplotlib"]
+  },
+  {
+    "name": "Vikram Singh",
+    "skills": ["C++", "Algoritms", "Data Structure", "competitive programming", "python"]
+  },
+  {
+    "name": "Ananya Krishnan",
+    "skills": ["javascript", "vue.js", "python", "flask", "PostgreSQL", "AWS", "CI/CD"]
+  },
+  {
+    "name": "Karan Mehta",
+    "skills": ["Python", "Sklearn", "XGboost", "feature engineering", "SQL", "tableau"]
+  },
+  {
+    "name": "Deepika Rao",
+    "skills": ["Java", "Android", "Kotlin", "Firebase", "REST", "UI/UX", "figma"]
+  },
+  {
+    "name": "Aditya Kumar",
+    "skills": ["Reactjs", "TypeScrpit", "GraphQL", "redux", "tailwind", "nodejs", "jest"]
+  },
+  {
+    "name": "Meera Iyer",
+    "skills": ["python", "R", "statistics", "ML", "regression", "clustering", "Power-BI"]
+  }
+]
